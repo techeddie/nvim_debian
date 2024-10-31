@@ -98,18 +98,24 @@ return require('packer').startup(function()
 
   -- FILE MANAGEMENT --
   -- use "vifm/vifm.vim"
-  -- use "mhinz/vim-startify"
+  use "mhinz/vim-startify"
 -- use greeter
-  use {
-      'goolord/alpha-nvim',
-      config = function ()
-          require'alpha'.setup(require'alpha.themes.dashboard'.config)
-      end
-  }
+  -- use {
+  --     'goolord/alpha-nvim',
+  --     config = function ()
+  --         require'alpha'.setup(require'alpha.themes.dashboard'.config)
+  --     end
+  -- }
 
   use "mbbill/undotree"
   use "ptzz/lf.vim"
-  use 'kyazdani42/nvim-tree.lua'
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = {
+      'kyazdani42/nvim-web-devicons', -- optional, for file icons
+    },
+    tag = 'nightly' -- optional, updated every week. (see issue #1193)
+  }
   --use "lambdalisue/fern.vim"
   --use "lambdalisue/fern-git-status.vim"
   --use "lambdalisue/nerdfont.vim"
@@ -118,7 +124,7 @@ return require('packer').startup(function()
 
   -- TERMINAL
   use "voldikss/vim-floaterm"
-  -- use "akinsho/toggleterm.nvim"
+  use "akinsho/toggleterm.nvim"
   use "junegunn/fzf"
   use "junegunn/fzf.vim"
 
