@@ -109,13 +109,10 @@ return require('packer').startup(function()
 
   use "mbbill/undotree"
   use "ptzz/lf.vim"
-  use {
-    'kyazdani42/nvim-tree.lua',
-    requires = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icons
-    },
-    tag = 'nightly' -- optional, updated every week. (see issue #1193)
-  }
+  use "mbbill/undotree"
+  use "ptzz/lf.vim"
+  use "kyazdani42/nvim-tree.lua"
+  use "kyazdani42/nvim-web-devicons"
   --use "lambdalisue/fern.vim"
   --use "lambdalisue/fern-git-status.vim"
   --use "lambdalisue/nerdfont.vim"
