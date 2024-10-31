@@ -20,6 +20,8 @@ sudo make install
 
 ```bash
 git clone https://github.com/techeddie/nvim_debian.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+wget https://github.com/techeddie/dotfiles_linux/blob/playground/nvim/lua/config/keymaps.lua "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim/lua/config
+
 
 # run nvim (plugins will be installed automatically)
 nvim
