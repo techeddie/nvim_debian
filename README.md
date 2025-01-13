@@ -38,3 +38,9 @@ mv ~/.local/share/nvim/site/ /tmp
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
 https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
+
+## how to uninstall neovim if installed via manual build
+```
+sudo rm /usr/local/bin/nvim
+sudo rm -r /usr/local/share/nvim/
+```
