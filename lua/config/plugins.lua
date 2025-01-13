@@ -74,6 +74,7 @@ return require('packer').startup(function()
   use "jiangmiao/auto-pairs" --auto pair brackets and more
 
   -- use "lukas-reineke/indent-blankline.nvim"
+  use "lukas-reineke/indent-blankline.nvim"
 
   -- SNIPPETS
   -- use "L3MON4D3/LuaSnip" --snippet engine
@@ -90,10 +91,7 @@ return require('packer').startup(function()
   }
 
   -- TREESITTER
-  -- use {
-  --   "nvim-treesitter/nvim-treesitter",
-  --   run = ":TSUpdate",
-  -- }
+  use "nvim-treesitter/nvim-treesitter"
   -- use "p00f/nvim-ts-rainbow"
 
   -- FILE MANAGEMENT --
@@ -109,10 +107,12 @@ return require('packer').startup(function()
 
   use "mbbill/undotree"
   use "ptzz/lf.vim"
-  use "mbbill/undotree"
-  use "ptzz/lf.vim"
-  use "kyazdani42/nvim-tree.lua"
-  use "kyazdani42/nvim-web-devicons"
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = {
+      'kyazdani42/nvim-web-devicons', -- optional, for file icons
+    }
+  }
   --use "lambdalisue/fern.vim"
   --use "lambdalisue/fern-git-status.vim"
   --use "lambdalisue/nerdfont.vim"
@@ -132,14 +132,20 @@ return require('packer').startup(function()
   --BUFFER
   use { 'dracula/vim', as = 'dracula' } --vcscode colorscheme
   -- use "tpope/vim-commentary" --comment with gc
-  use 'numToStr/Comment.nvim'
+  use {
+      'numToStr/Comment.nvim',
+      config = function()
+          require('Comment').setup()
+      end
+  }
+
   use "tpope/vim-surround" --surround text
   use "akinsho/bufferline.nvim" --buffer bar / tab and more
   use "moll/vim-bbye" --do not exit windows
   use 'jeetsukumaran/vim-buffergator' --bufferlist and other stuff
-  use "nvim-telescope/telescope.nvim"
-  use "nvim-telescope/telescope-fzy-native.nvim"
-  use 'nvim-telescope/telescope-media-files.nvim'
+  -- use "nvim-telescope/telescope.nvim"
+  -- use "nvim-telescope/telescope-fzy-native.nvim"
+  -- use 'nvim-telescope/telescope-media-files.nvim'
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use 'windwp/nvim-spectre' --find and replace
   use "rbgrouleff/bclose.vim" --don't close buffer's windows
