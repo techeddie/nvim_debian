@@ -76,10 +76,6 @@ return require('packer').startup(function()
   -- use "lukas-reineke/indent-blankline.nvim"
   use "lukas-reineke/indent-blankline.nvim"
 
-  -- SNIPPETS
-  -- use "L3MON4D3/LuaSnip" --snippet engine
-  -- use "rafamadriz/friendly-snippets" -- a bunch of snippets to use use "jiangmiao/auto-pairs"
-
   -- LSP
   -- use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
@@ -97,14 +93,6 @@ return require('packer').startup(function()
   -- FILE MANAGEMENT --
   -- use "vifm/vifm.vim"
   use "mhinz/vim-startify"
--- use greeter
-  -- use {
-  --     'goolord/alpha-nvim',
-  --     config = function ()
-  --         require'alpha'.setup(require'alpha.themes.dashboard'.config)
-  --     end
-  -- }
-
   use "mbbill/undotree"
   use "ptzz/lf.vim"
   use {
@@ -113,11 +101,6 @@ return require('packer').startup(function()
       'kyazdani42/nvim-web-devicons', -- optional, for file icons
     }
   }
-  --use "lambdalisue/fern.vim"
-  --use "lambdalisue/fern-git-status.vim"
-  --use "lambdalisue/nerdfont.vim"
-  --use "lambdalisue/fern-renderer-nerdfont.vim"
-  --use "lambdalisue/fern-hijack.vim"
 
   -- TERMINAL
   use "voldikss/vim-floaterm"
@@ -138,47 +121,19 @@ return require('packer').startup(function()
           require('Comment').setup()
       end
   }
-
   use "tpope/vim-surround" --surround text
   use "akinsho/bufferline.nvim" --buffer bar / tab and more
   use "moll/vim-bbye" --do not exit windows
   use 'jeetsukumaran/vim-buffergator' --bufferlist and other stuff
-  -- use "nvim-telescope/telescope.nvim"
-  -- use "nvim-telescope/telescope-fzy-native.nvim"
-  -- use 'nvim-telescope/telescope-media-files.nvim'
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use 'windwp/nvim-spectre' --find and replace
   use "rbgrouleff/bclose.vim" --don't close buffer's windows
-  use {
-    'VonHeikemen/searchbox.nvim', --search and replace box
-    requires = {
-      {'MunifTanjim/nui.nvim'}
-    }
-  }
 
   -- use "henriquehbr/nvim-startup.lua"  --measure startup time
-  use "lewis6991/impatient.nvim" --improve startup time
-
-  --NOTIFY WIDGET
-  -- use 'rcarriga/nvim-notify'
-
-  --SCROOL SMOOTH
-  -- use 'karb94/neoscroll.nvim'
+  -- use "lewis6991/impatient.nvim" --improve startup time
 
 --SIDEBAR
   use 'sidebar-nvim/sidebar.nvim'
-
---toggle transparent
-use 'xiyaowong/transparent.nvim'
-
---TAGBAR
--- use 'preservim/tagbar'
-
-  -- Load on an autocommand event
-  -- use {'andymass/vim-matchup', event = 'VimEnter'}
-
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()

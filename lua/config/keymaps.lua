@@ -132,7 +132,7 @@ local opts = { noremap = true, silent = true }
   keymap("n", "<M-g>", ":LazyGitCurrentFile<CR>") --lazygit
 
 --SEARCH AND REPLACE
-  keymap("n", "<M-r>", ":SearchBoxReplace<CR>")
+  -- keymap("n", "<M-r>", ":SearchBoxReplace<CR>")
 
 --JUMP TO BUFFER WITH SPACEBAR
   for i = 1, 6 do 
