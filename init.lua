@@ -1,5 +1,4 @@
 --base setup
-require('plugconfig.impatient')
 require "config.settings"
 require "config.colorscheme"
 require "config.keymaps"
@@ -17,3 +16,4 @@ require "plugconfig.gitsigns"
 require "plugconfig.sidebar"
 require "plugconfig.lualine"
 require "plugconfig.transparent"
+require "plugconfig.nvim-tree"
