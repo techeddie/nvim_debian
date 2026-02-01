@@ -6,7 +6,6 @@ local options = { noremap = true }
 local opts = { noremap = true, silent = true }
 
 --BUFFER OPEN CLOSE 
-
   keymap("i", "jk", "<ESC>", opts) --exit insert mode
   keymap("i", "kj", "<ESC>", opts) --exit insert mode
   keymap("i", "ö", "<ESC>") --exit insert mode
@@ -77,7 +76,6 @@ local opts = { noremap = true, silent = true }
 
 
 -- NAVIGATE BUFFERS
-  -- keymap("n", "<M-3>", ":TagbarToggle<CR>", opts)
   keymap("n", "<M-3>", ":SidebarNvimToggle<CR>", opts)
   keymap("n", "<M-4>", ":BuffergatorOpen<CR>", opts)
   keymap("n", "<M-b>", ":BuffergatorOpen<CR>", opts)
@@ -91,9 +89,6 @@ local opts = { noremap = true, silent = true }
   keymap("n", "]", ":cnext<CR>", opts) --next quickfix list item
 
 -- RESIZE PANES
-  -- keymap("n", "<M-)>", ":exec 'vertical resize '. string(&columns * 0.75)<CR>") --pane 75%
-  -- keymap("n", "<M-/>", ":exec 'resize '. string(&columns * 0.75)<CR>")
-  -- keymap("n", "<M-[>", ":exec 'vertical resize '. string(&columns * 0.75)<CR>") --pane 75%
   keymap("n", "<C-S-Down>", ":resize -2<CR>", opts) --pane smaller horizontal
   keymap("n", "<C-S-Left>", ":vertical resize -2<CR>", opts) --pane smaller vertical
   keymap("n", "<C-S-Right>", ":vertical resize +2<CR>", opts) --pane bigger vertical
@@ -103,14 +98,10 @@ local opts = { noremap = true, silent = true }
 
 -- VISUAL --
   keymap("v", "<", "<gv", opts) -- Stay in indent mode
-  keymap("v", ">", ">gv", opts) -- Stay in indent mode
-  -- Move text up and down
   keymap("v", "<A-j>", ":m .+1<CR>==", opts)
   keymap("v", "<A-k>", ":m .-2<CR>==", opts)
+  keymap("v", ">", ">gv", opts) -- Stay in indent mode
   keymap("v", "p", '"_dP', opts)
-  -- Visual Block --   -- Move text up and down
-  -- keymap("x", "<A-Down>", ":move '>+1<CR>gv-gv", opts)
-  -- keymap("x", "<A-Up>", ":move '<-2<CR>gv-gv", opts)
   keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
   keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
   keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
@@ -130,34 +121,17 @@ local opts = { noremap = true, silent = true }
   keymap("n", "<M-m>", ":Startify <CR>") --welcome screen
   keymap("n", "<S-u>", ":UndotreeToggle | :UndotreeFocus <CR>") --toggle history tree
   keymap("n", "<leader>e", ":NvimTreeFindFileToggle<CR>") --nvimtree
-  keymap("n", "<leader>hs", ":set hlsearch <CR>") --no highlight
   keymap("n", "<leader>l", ":Lf<CR>") --lf filemanager
   keymap("n", "<leader>m", ":Alpha <CR>") --welcome screen
   keymap("n", "<leader>nf", ':NeovimFiles <CR>')
   keymap("n", "<leader>nh", ":nohlsearch <CR>") --no highlight
   keymap("n", "<leader>nh", ":set hlsearch <CR>") --no highlight
 
---TERMINAL
-  -- keymap("n", "<F5>", '<cmd>w | clear | :TermExec cmd="bash %:p"<CR>') --execute current buffer
-  -- keymap("n", "<F8>", ':.w !bash<CR>')
-  -- keymap("n", "<F6>", '<cmd>w | clear | :TermExec cmd="lua %:p"<CR>') --execute current buffer
-
-
 --LAZYGIT
   keymap("n", "<leader>g", ":LazyGitCurrentFile<CR>") --lazygit
   keymap("n", "<M-g>", ":LazyGitCurrentFile<CR>") --lazygit
 
 --SEARCH AND REPLACE
-  -- keymap("n", "<C-f>", ":SearchBoxSimple<CR>")
-  -- keymap("n", "<leader>s", "viw:lua require('spectre').open_file_search()<cr>")
-  -- keymap("v", "<M-r>", "<cmd>lua require('spectre').open_visual({select_word=true})<CR>")
-  -- keymap("n", "<M-r>", "viw:lua require('spectre').open_file_search()<cr>") --replace only in current file
-  -- keymap("n", "<leader-vs>", "<cmd>lua require('spectre').open_visual({select_word=true})<CR>")
-  -- keymap("n", "<leader>s", "<cmd>lua require('spectre').open_visual({select_word=true})<CR>")
-  -- keymap("n", "<leader>sw", "<cmd>lua require('spectre').open_visual({select_word=true})<CR>")
-  -- keymap("v", "<M-r>", "<cmd>lua require('spectre').open_file_search()<cr>") --replace only in current file
-  -- keymap("v", "<leader>s", "<esc>:lua require('spectre').open_visual()<CR>")
-  -- keymap("x", "<M-r>", ":SearchBoxReplace visual_mode=true<CR>")
   keymap("n", "<M-r>", ":SearchBoxReplace<CR>")
 
 --JUMP TO BUFFER WITH SPACEBAR
