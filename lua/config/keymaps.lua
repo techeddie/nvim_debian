@@ -7,15 +7,6 @@ local opts = { noremap = true, silent = true }
 
 --BUFFER OPEN CLOSE 
 
-  -- keymap("n", "ä", ":qall! <CR>") --force quit all buffers
-  -- keymap("n", "ö", ":w! <CR>") --save from normal mode
-  -- keymap("n", "ü", ":w! <CR>") --save from normal mode
-  -- keymap("n", "<M-j>", "<C-d>") --scroll down
-  -- keymap("n", "<M-k>", "<C-u>") --scroll up
-  -- keymap("n", "<leader>me", ":m$<CR>") --move current line to end of file
-  -- keymap("v", "<M-r>", "<cmd>lua require('spectre').open_file_search()<cr>") --replace only in current file
-  -- keymap("n", "<leader>v", ":vsplit <CR>") --vertical split
-  -- keymap("n", "<C-f>", ":SearchBoxSimple <CR>") --searchbox simple
   keymap("i", "jk", "<ESC>", opts) --exit insert mode
   keymap("i", "kj", "<ESC>", opts) --exit insert mode
   keymap("i", "ö", "<ESC>") --exit insert mode
@@ -34,7 +25,6 @@ local opts = { noremap = true, silent = true }
   keymap("n", "<F6>", ":K<CR>") --open keymap config file
   keymap("n", "<F7>", ":I<CR>") --open init config file
   keymap("n", "<F8>", ":P<CR>") --open plugins config file
-  keymap("n", "<M-h>", ":split <CR>") --horizontal split
   keymap("n", "<M-k>", ":K<CR>") --open plugins config file
   keymap("n", "<M-o>", "<C-o>") --jump to last location
   keymap("n", "<M-p>", ":P<CR>") --open plugins config file
@@ -43,7 +33,6 @@ local opts = { noremap = true, silent = true }
   keymap("n", "<M-s-q>", ":<C-w>q<CR>") --quit current buffer
   keymap("n", "<M-s-t>", "<C-w>x") --toggle panes
   keymap("n", "<M-t>", ":tabnew <CR>") --open new tab
-  keymap("n", "<M-v>", ":vsplit<CR>") --vertical split
   keymap("n", "<S-Tab>", "<C-w>W") --switch to previous pane
   keymap("n", "<S-r>", ":source % <CR>") --source current buffer
   keymap("n", "<Tab>", "<C-w>w") --switch to next pane
@@ -52,8 +41,6 @@ local opts = { noremap = true, silent = true }
   keymap("n", "<leader>gd", ":Gitsigns diffthis ~1<CR>") --git toggle light highlight
   keymap("n", "<leader>gp", ":echo expand('%:p')<CR>") --get file path
   keymap("n", "<leader>gtl", ":Gitsigns toggle_linehl<CR>") --git toggle light highlight
-  keymap("n", "<leader>h", ":split <CR>") --horizontal split
-  keymap("n", "<leader>n", "> <CR>") --indent current line to right
   keymap("n", "<leader>nn", ":lua require('gitsigns').next_hunk({wrap=false}) <CR>") --git show next hunk
   keymap("n", "<leader>nw", ":set nowrap<CR>") --wrap
   keymap("n", "<leader>o", ":a<CR><CR>.<CR>") --Insert a newline without entering in insert mode
@@ -85,6 +72,10 @@ local opts = { noremap = true, silent = true }
   keymap('n', 'c', '"_c') --do not yank to system clipboard for c motions
   keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true }) -- Remap for dealing with word wrap
   keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true }) -- Remap for dealing with word wrap
+  keymap("n", "<leader>hs", ":split <CR>") --horizontal split
+  keymap("n", "<leader>vs", ":vsplit <CR>") --vertical split
+
+
 -- NAVIGATE BUFFERS
   -- keymap("n", "<M-3>", ":TagbarToggle<CR>", opts)
   keymap("n", "<M-3>", ":SidebarNvimToggle<CR>", opts)
@@ -118,8 +109,8 @@ local opts = { noremap = true, silent = true }
   keymap("v", "<A-k>", ":m .-2<CR>==", opts)
   keymap("v", "p", '"_dP', opts)
   -- Visual Block --   -- Move text up and down
-  keymap("x", "<A-Down>", ":move '>+1<CR>gv-gv", opts)
-  keymap("x", "<A-Up>", ":move '<-2<CR>gv-gv", opts)
+  -- keymap("x", "<A-Down>", ":move '>+1<CR>gv-gv", opts)
+  -- keymap("x", "<A-Up>", ":move '<-2<CR>gv-gv", opts)
   keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
   keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
   keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
