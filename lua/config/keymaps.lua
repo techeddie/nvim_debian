@@ -122,7 +122,7 @@ local opts = { noremap = true, silent = true }
   keymap("n", "<S-u>", ":UndotreeToggle | :UndotreeFocus <CR>") --toggle history tree
   keymap("n", "<leader>e", ":NvimTreeFindFileToggle<CR>") --nvimtree
   keymap("n", "<leader>l", ":Lf<CR>") --lf filemanager
-  keymap("n", "<leader>m", ":Alpha <CR>") --welcome screen
+  keymap("n", "<leader>m", ":Startify <CR>") --welcome screen
   keymap("n", "<leader>nf", ':NeovimFiles <CR>')
   keymap("n", "<leader>nh", ":nohlsearch <CR>") --no highlight
   keymap("n", "<leader>nh", ":set hlsearch <CR>") --no highlight
