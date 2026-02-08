@@ -1,5 +1,6 @@
 local g = vim.g --global vim
 local a = vim.api --vim api
+local undodir_path = os.getenv("HOME") .. "/.cache/nvim.undodir"
 
 -- REMAP LEADER AND LOCAL LEADER TO <SPACE>
 a.nvim_set_keymap("", "<Space>", "<Nop>", { noremap = true, silent = true })
@@ -8,10 +9,6 @@ g.maplocalleader = " "
 
 -- OPTIONS
 local options = {
-  -- foldexpr = "nvim_treesitter#foldexpr()",
-  -- foldmethod = "expr",
-  -- guicursor= "a:blinkon100"
-  --[[ listchars = 'trail:·,tab:→ ,extends:▸', ]]
   autoindent = false,
   backup = false,
   breakindent = true, -- testing
@@ -28,8 +25,6 @@ local options = {
   ignorecase = true,
   list = false,
   listchars = 'trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂',
-  -- listchars = 'tab:→ ',
-  mouse = "a",
   mouse = "",
   number = true,
   numberwidth = 2,
@@ -48,7 +43,6 @@ local options = {
   termguicolors = true,
   textwidth = 300,
   timeoutlen = 300,
-  undodir = "/home/eddie/.cache/nvim.undodir",
   undofile = true,
   updatetime = 200,
   wrap = false,
