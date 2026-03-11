@@ -42,6 +42,8 @@ local opts = { noremap = true, silent = true }
   keymap("n", "<leader>gtl", ":Gitsigns toggle_linehl<CR>") --git toggle light highlight
   keymap("n", "<leader>nn", ":lua require('gitsigns').next_hunk({wrap=false}) <CR>") --git show next hunk
   keymap("n", "<leader>nw", ":set nowrap<CR>") --wrap
+  keymap("n", "<leader>sn", ":set nonumber<CR>") --nolinenumbers
+  keymap("n", "<leader>snn", ":set nonumber<CR>") --nolinenumbers
   keymap("n", "<leader>o", ":a<CR><CR>.<CR>") --Insert a newline without entering in insert mode
   keymap("n", "<leader>q", ":<C-w>q<CR>") --quit current buffer
   keymap("n", "<leader>r", "<C-w>r") --switch to previous pane
