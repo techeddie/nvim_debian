@@ -54,10 +54,18 @@ return require('packer').startup(function()
   -- use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
 
   -- COLORSCHEMES - THEME
-  -- use "tomasiser/vim-code-dark"
+  use "tomasiser/vim-code-dark"
   use "folke/tokyonight.nvim"
   use "rose-pine/neovim"
   use 'navarasu/onedark.nvim' -- Theme inspired by Atom
+  use {
+    "ellisonleao/gruvbox.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd([[colorscheme gruvbox]])
+    end,
+  }
 
   -- SYNTAX HIGHLIGHTING COLORS LANGUAGES--
   -- use "PotatoesMaster/i3-vim-syntax"
