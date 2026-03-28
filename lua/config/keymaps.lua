@@ -48,7 +48,7 @@ local opts = { noremap = true, silent = true }
   keymap("n", "<leader>q", ":<C-w>q<CR>") --quit current buffer
   keymap("n", "<leader>r", "<C-w>r") --switch to previous pane
   keymap("n", "<leader>s", ":FloatermNew<CR>") --open new tab
-  keymap("n", "<leader>t", ":FloatermNew<CR>") --open new tab
+  keymap("n", "<leader>t", ":FloatermNew<CR>") --open new terminal
   keymap("n", "<leader>tl", ":Gitsigns toggle_linehl<CR>") --git toggle light highlight
   keymap("n", "<leader>u", "gUU") --make uppercase
   keymap("n", "<leader>w", ":set wrap<CR>") --wrap
