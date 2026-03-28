@@ -13,7 +13,12 @@ if fn.empty(fn.glob(install_path)) > 0 then
   }
   print "Installing packer close and reopen Neovim..."
   vim.cmd [[packadd packer.nvim]]
+  -- don't show errors on first start
+  vim.notify = function() end
 end
+
+-- deprecation-warnings packer
+vim.tbl_islist = vim.islist or vim.tbl_islist
 
 -- AUTOCOMMAND THAT RELOADS NEOVIM WHENEVER YOU SAVE THE PLUGINS.LUA FILE
 vim.cmd [[
@@ -28,14 +33,15 @@ local status_ok, packer = pcall(require, "packer")
 if not status_ok then
   return
 end
+
 -- HAVE PACKER USE A POPUP WINDOW
--- packer.init {
---   display = {
---     open_fn = function()
---       return require("packer.util").float { border = "rounded" }
---     end,
---   },
--- }
+packer.init {
+  display = {
+    open_fn = function()
+      return require("packer.util").float { border = "rounded" }
+    end,
+  },
+}
 
 ----------------------------------------------------------------------------
 -- MY PLUGINS
@@ -53,19 +59,12 @@ return require('packer').startup(function()
   }
   -- use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
 
-  -- COLORSCHEMES - THEME
+-- COLORSCHEMES - THEME
   use "tomasiser/vim-code-dark"
   use "folke/tokyonight.nvim"
   use "rose-pine/neovim"
-  use 'navarasu/onedark.nvim' -- Theme inspired by Atom
-  use {
-    "ellisonleao/gruvbox.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.cmd([[colorscheme gruvbox]])
-    end,
-  }
+  use 'navarasu/onedark.nvim'
+  use "ellisonleao/gruvbox.nvim"  
 
   -- SYNTAX HIGHLIGHTING COLORS LANGUAGES--
   -- use "PotatoesMaster/i3-vim-syntax"

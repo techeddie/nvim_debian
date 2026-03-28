@@ -108,6 +108,8 @@ local opts = { noremap = true, silent = true }
   keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
   keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
   keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
+  keymap("v", "<leader>s",":sort<CR>", opts)
+  keymap("v", "<leader>S",":sort!<CR>", opts)
 
 
 --FILE MANAGEMENT

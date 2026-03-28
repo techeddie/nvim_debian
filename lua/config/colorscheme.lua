@@ -5,10 +5,17 @@
 -- local colorscheme = "wildcharm"
 -- local colorscheme = "tokyonight"
 -- local colorscheme = "codedark"
-local colorscheme = "gruvbox"
+-- local colorscheme = "gruvbox"
+--
+-- local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
+-- if not status_ok then
+--   vim.notify("colorscheme " .. colorscheme .. " not found!")
+--   return
+-- end
 
-local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
-if not status_ok then
-  vim.notify("colorscheme " .. colorscheme .. " not found!")
-  return
+
+
+local ok, _ = pcall(vim.cmd, "colorscheme gruvbox")
+if not ok then
+  vim.cmd "colorscheme default"
 end
