@@ -13,7 +13,6 @@ end
 
 -- when plugins are installed
 require "config.colorscheme"
-require "plugconfig.buffergator"
 require "plugconfig.bufferline"
 require "plugconfig.cmp"
 require "plugconfig.fzf"
