@@ -14,7 +14,6 @@ local opts = { noremap = true, silent = true }
   keymap("n", "<C-Down>", "<C-e>") --scroll down
   keymap("n", "<C-f>", ":Lines <CR>") --searchbox simple
   keymap("n", "<C-k>", ":qall! <CR>") --force quit all buffers
-  keymap("n", "<C-l>", ":BuffergatorOpen <CR>") --buffer list
   keymap("n", "<C-r>", ":source % <CR>") --source current buffer
   keymap("n", "<C-s>", ":w!<CR><ESC>") --save current buffer
   keymap("n", "<C-y>", ":redo <CR>") --redo change
@@ -80,8 +79,6 @@ local opts = { noremap = true, silent = true }
 
 -- NAVIGATE BUFFERS
   keymap("n", "<M-3>", ":SidebarNvimToggle<CR>", opts)
-  keymap("n", "<M-4>", ":BuffergatorOpen<CR>", opts)
-  keymap("n", "<M-b>", ":BuffergatorOpen<CR>", opts)
   keymap("n", "<S-Left>", ":bnext<CR>", opts)
   keymap("n", "<S-Left>", ":bprevious<CR>", opts)
   keymap("n", "<S-Right>", ":bnext<CR>", opts)
@@ -119,7 +116,6 @@ local opts = { noremap = true, silent = true }
   keymap("n", "<C-h>", ":History<CR>") --nvimtree
   keymap("n", "<C-n>", ":NvimTreeFindFileToggle<CR>") --nvimtree
   keymap("n", "<F2>", ":Vifm<CR>") --vi filemanager
-  keymap("n", "<M-1>", ":BuffergatorOpen<CR>") --nvimtree
   keymap("n", "<M-2>", ":UndotreeToggle | :UndotreeFocus <CR>") --toggle history tree
   keymap("n", "<M-f>", ":Lines<CR>") --nvimtree
   keymap("n", "<M-l>", ":Lf<CR>") --lf filemanager
