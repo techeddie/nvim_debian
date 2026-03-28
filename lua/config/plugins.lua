@@ -131,7 +131,6 @@ return require('packer').startup(function()
   use "tpope/vim-surround" --surround text
   use "akinsho/bufferline.nvim" --buffer bar / tab and more
   use "moll/vim-bbye" --do not exit windows
-  use 'jeetsukumaran/vim-buffergator' --bufferlist and other stuff
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use 'windwp/nvim-spectre' --find and replace
   use "rbgrouleff/bclose.vim" --don't close buffer's windows
