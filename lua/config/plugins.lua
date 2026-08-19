@@ -134,6 +134,7 @@ return require('packer').startup(function()
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use 'windwp/nvim-spectre' --find and replace
   use "rbgrouleff/bclose.vim" --don't close buffer's windows
+  use("b0o/incline.nvim") --file path
 
   -- use "henriquehbr/nvim-startup.lua"  --measure startup time
   -- use "lewis6991/impatient.nvim" --improve startup time
