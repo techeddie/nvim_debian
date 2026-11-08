@@ -9,11 +9,15 @@ sudo apt-get install ninja-build gettext cmake unzip curl
 ## install neovim nightly version - recommended for telescope plugin
 
 ```bash
-git clone https://github.com/neovim/neovim.git
-cd neovim
-git checkout nightly
-make CMAKE_BUILD_TYPE=Release
-sudo make install
+case "$(uname -m)" in x86_64) NVIM_ARCH=x86_64 ;; aarch64) NVIM_ARCH=arm64 ;; esac
+curl -fLo /tmp/nvim.tar.gz "https://github.com/neovim/neovim/releases/latest/download/nvim-linux-${NVIM_ARCH}.tar.gz"
+
+# Install to /opt/nvim and link into PATH
+sudo rm -rf /opt/nvim
+sudo mkdir -p /opt/nvim
+sudo tar -xzf /tmp/nvim.tar.gz -C /opt/nvim --strip-components=1
+sudo ln -sf /opt/nvim/bin/nvim /usr/local/bin/nvim
+rm /tmp/nvim.tar.gz
 ```
 
 ## clone neovim config files
